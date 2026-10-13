@@ -13,6 +13,7 @@ Most humanizer tools target English only. natural-writing also covers Vietnamese
 3. Three modes: rewrite a draft, review without editing, co-write by interview.
 4. Never invents facts, quotes, or experiences. Gaps are marked `[add: real detail]` (or `[bổ sung: chi tiết thật]`).
 5. One portable `SKILL.md`, no other files.
+6. Clean 1-Click Copy: Delivers rewritten drafts in a single clean code block ready to copy immediately, with change notes and fact audits kept strictly outside.
 
 ---
 

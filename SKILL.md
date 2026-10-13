@@ -24,7 +24,7 @@ When decisions conflict, follow this strict priority order:
 
 ## Pick a Mode
 
-- **Edit / Rewrite a draft** (default when user pastes text or gives a file): Keep facts, intent, and structure. Cut filler, replace abstractions with specifics, vary rhythm. Rewrite a paragraph from scratch only if it is mostly hollow padding.
+- **Edit / Rewrite a draft** (default when user pastes text or gives a file): Keep facts, intent, and structure. Cut filler, replace abstractions with specifics, vary rhythm. Rewrite a paragraph from scratch only if it is mostly hollow padding. Uses the 1-Click Copy output contract when returning text in chat.
 - **Review / Audit** (when user asks "review văn phong", "đánh giá có giống AI không", "critique"): Do not edit the text or modify files. Act as a human editor: pinpoint the exact AI tells, quote the problematic sentences, explain why they sound robotic, and suggest 2–3 concrete rewrites.
 - **Write new / Co-write** (when user asks to write from scratch): Needs real material. Never invent generic filler. Ask one short batch of 3–5 sharp questions first (what actually happened, who, numbers/results, personal trade-offs or opinions). If no voice sample is given, match the draft's tone and offer to match a sample if provided.
 
@@ -135,7 +135,10 @@ Fix the underlying structure, not just the words. Swapping "crucial" for "key" o
    - Could any sentence be pasted into an unrelated topic without changing a word? If yes, make it specific or delete it.
    - Did any surviving tells slip through (patterns 1, 2, 4, 8)?
    - Are protected blocks (code, paths, links) unchanged?
-5. **Deliver:** Return the revision, a short list of what changed, and the facts the user must confirm. If the user gave a file or wants text to paste elsewhere, return only the final text, with the list outside it.
+5. **Deliver:**
+   - **Clean 1-Click Copy Contract:** When presenting revised text or new drafts in chat, enclose the entire finalized text in **a single code block** (e.g. ` ```text ` or ` ```markdown `) with natural line breaks. Never mix commentary, conversational greetings, or wrap-up pleasantries inside the block.
+   - **External Notes:** Place the brief list of changes made, gaps needing user facts (`[add: real detail]`), or follow-up suggestions strictly **outside and below** the code block.
+   - **File Mode:** If the user provided a file path or asked to edit in-place, modify only the prose inside the file (leaving code/links/metadata intact), and output a concise summary outside.
 
 ---
 
